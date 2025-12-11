@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'serif': ['EB Garamond', 'Times New Roman', 'Georgia', 'serif'],
+        'display': ['Cormorant Garamond', 'Times New Roman', 'Georgia', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
