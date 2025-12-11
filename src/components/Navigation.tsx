@@ -15,11 +15,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Prologue", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Expertise", href: "#skills" },
+    { label: "Works", href: "#projects" },
+    { label: "Correspond", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -31,7 +31,7 @@ const Navigation = () => {
     <nav 
       className={`fixed top-0 w-full z-50 transition-smooth ${
         isScrolled 
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-card" 
+          ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-card" 
           : "bg-transparent"
       }`}
     >
@@ -43,9 +43,9 @@ const Navigation = () => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="text-xl font-bold gradient-primary bg-clip-text text-transparent"
+            className="text-xl font-display font-semibold italic text-primary"
           >
-            Portfolio
+            The Scholar
           </a>
           
           {/* Desktop Navigation */}
@@ -55,7 +55,7 @@ const Navigation = () => {
                 key={item.href}
                 variant="ghost"
                 onClick={() => scrollToSection(item.href)}
-                className="transition-smooth hover:text-primary"
+                className="transition-smooth hover:text-primary font-serif"
               >
                 {item.label}
               </Button>
@@ -82,7 +82,7 @@ const Navigation = () => {
                   key={item.href}
                   variant="ghost"
                   onClick={() => scrollToSection(item.href)}
-                  className="justify-start transition-smooth hover:text-primary"
+                  className="justify-start transition-smooth hover:text-primary font-serif"
                 >
                   {item.label}
                 </Button>
