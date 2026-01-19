@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
   return (
@@ -9,6 +10,22 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Profile Photo */}
+          <div className="relative inline-block">
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-elegant mx-auto relative">
+              <img 
+                src={profileImage} 
+                alt="Sheikh Mohsin" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            {/* Decorative frame corners */}
+            <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/50" />
+            <div className="absolute -top-2 -right-2 w-6 h-6 border-t-2 border-r-2 border-primary/50" />
+            <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-2 border-l-2 border-primary/50" />
+            <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-primary/50" />
+          </div>
+          
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Welcome to my portfolio</p>
           <h1 className="text-5xl md:text-7xl font-display font-semibold tracking-tight leading-tight">
             <span className="italic">Sheikh</span> Mohsin
