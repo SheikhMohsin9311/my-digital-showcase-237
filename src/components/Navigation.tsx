@@ -18,6 +18,7 @@ const Navigation = () => {
     { label: "Prologue", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Expertise", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Works", href: "#projects" },
     { label: "Correspond", href: "#contact" },
   ];
@@ -45,7 +46,7 @@ const Navigation = () => {
             }}
             className="text-xl font-display font-semibold italic text-primary"
           >
-            The Scholar
+            Sheikh Mohsin
           </a>
           
           {/* Desktop Navigation */}

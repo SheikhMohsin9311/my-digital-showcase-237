@@ -1,11 +1,11 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Mail, href: "mailto:sheikh.mohsin@flame.edu.in", label: "Email" },
+    { icon: Phone, href: "tel:+916005277810", label: "Phone" },
   ];
 
   return (
@@ -14,8 +14,9 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <p className="text-muted-foreground font-serif italic">
-                © MMXXV · Crafted with scholarly dedication
+              <p className="font-display font-semibold italic text-primary mb-1">Sheikh Mohsin</p>
+              <p className="text-muted-foreground font-serif italic text-sm">
+                Computer Science & Business Analytics · FLAME University
               </p>
             </div>
             
