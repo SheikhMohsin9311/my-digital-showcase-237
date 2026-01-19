@@ -3,16 +3,16 @@ import { Badge } from "@/components/ui/badge";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages & Frameworks",
-      skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vue.js"]
+      title: "Programming Languages",
+      skills: ["C++", "Python"]
     },
     {
-      title: "Server & Databases",
-      skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "REST APIs"]
+      title: "Data & Analytics",
+      skills: ["Data Structures & Algorithms", "Data Analysis", "AWS", "Data Mining", "Algorithmic Thinking", "Theoretical Computer Science"]
     },
     {
-      title: "Instruments & Methods",
-      skills: ["Git", "Docker", "AWS", "Figma", "CI/CD"]
+      title: "Languages",
+      skills: ["English", "Hindi", "Urdu", "Kashmiri"]
     }
   ];
 
@@ -26,7 +26,7 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-px bg-primary/40 mx-auto mb-8" />
           <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto leading-relaxed">
-            The tools and disciplines refined through years of dedicated study
+            The tools and disciplines refined through dedicated study and practical application
           </p>
           
           <div className="grid md:grid-cols-3 gap-12">

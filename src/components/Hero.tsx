@@ -11,22 +11,21 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Welcome to my portfolio</p>
           <h1 className="text-5xl md:text-7xl font-display font-semibold tracking-tight leading-tight">
-            <span className="italic">Scholar,</span> Developer,{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">Creator</span>
+            <span className="italic">Sheikh</span> Mohsin
           </h1>
           <div className="w-24 h-px bg-primary/50 mx-auto" />
           <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto font-serif italic">
-            "The pursuit of knowledge through elegant code"
+            "Understanding how technology can reduce inefficiencies, enhance accessibility, and solve problems that matter"
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Crafting digital experiences with the precision of a scholar and the creativity of an artist
+            Computer Science & Business Analytics Student at FLAME University, Pune
           </p>
           
           <div className="flex gap-6 justify-center flex-wrap pt-6">
             <Button 
               size="lg" 
               className="shadow-elegant hover:scale-105 transition-smooth font-serif text-base px-8"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
             </Button>

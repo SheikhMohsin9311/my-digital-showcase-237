@@ -1,22 +1,46 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, Feather, Lightbulb } from "lucide-react";
+import { BookOpen, Feather, Lightbulb, GraduationCap } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
-      icon: BookOpen,
-      title: "Scholarly Approach",
-      description: "Methodical research and elegant solutions"
+      icon: GraduationCap,
+      title: "Full Ride Scholar",
+      description: "One of few selected students on full scholarship at FLAME University"
     },
     {
-      icon: Feather,
-      title: "Artful Design",
-      description: "Beauty in simplicity and purpose"
+      icon: BookOpen,
+      title: "Published Writer",
+      description: "Written for Deccan Herald and Kashmir Poetics magazine"
     },
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description: "Where tradition meets modernity"
+      title: "Dot Slash Club",
+      description: "Member of University Coding team, Programming and Hackathons"
+    }
+  ];
+
+  const education = [
+    {
+      institution: "FLAME University, Pune",
+      degree: "BSc Computer Science and Business Analytics",
+      period: "Expected April 2028",
+      details: [
+        "GPA: 7.4/10",
+        "Interdisciplinary coursework in Philosophy and Public Policy",
+        "Member of University Coding team, Dot Slash Club"
+      ]
+    },
+    {
+      institution: "Jawahar Navodaya Vidyalaya, Kashmir",
+      degree: "High School",
+      period: "Graduated March 2024",
+      details: [
+        "Merit-based full ride scholarship",
+        "Extracurricular Head",
+        "Badminton Team, Debate Team",
+        "Atal Tinkering Labs Coordinator"
+      ]
     }
   ];
 
@@ -30,12 +54,11 @@ const About = () => {
           </h2>
           <div className="w-24 h-px bg-primary/40 mx-auto mb-8" />
           <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-            A devoted scholar of the digital arts, I pursue the craft of programming with the same 
-            reverence one might approach classical literature. Each line of code, a verse; 
-            each project, a magnum opus in the making.
+            A student of Computer Science and Business Analytics, drawn to research through computerisation 
+            in something tangible, using data, processes, and algorithms to create a measurable impact.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {highlights.map((item, index) => (
               <Card 
                 key={index} 
@@ -48,6 +71,27 @@ const About = () => {
                 <p className="text-muted-foreground">{item.description}</p>
               </Card>
             ))}
+          </div>
+
+          <div className="space-y-8">
+            <h3 className="text-2xl font-display font-semibold text-center italic mb-8">Education</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {education.map((edu, index) => (
+                <Card key={index} className="p-6 hover:shadow-card transition-smooth border-primary/10">
+                  <h4 className="text-lg font-display font-semibold italic text-primary mb-1">{edu.institution}</h4>
+                  <p className="font-serif text-foreground mb-1">{edu.degree}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{edu.period}</p>
+                  <ul className="space-y-2">
+                    {edu.details.map((detail, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>
