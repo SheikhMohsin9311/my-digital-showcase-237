@@ -3,11 +3,57 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Please provide your distinguished name").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please provide a valid electronic address").max(255, "Email must be less than 255 characters"),
+  subject: z.string().trim().min(1, "Please provide a subject of inquiry").max(200, "Subject must be less than 200 characters"),
+  message: z.string().trim().min(10, "Your message should be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
+  const { toast } = useToast();
+  
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => {
+    // Create mailto link with form data
+    const mailtoLink = `mailto:sheikh.mohsin@flame.edu.in?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
+      `From: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
+    )}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success toast
+    toast({
+      title: "Letter Prepared",
+      description: "Your email client has been opened with your message. Please send the email to complete your correspondence.",
+    });
+    
+    // Reset form after submission
+    form.reset();
   };
 
   return (
@@ -78,40 +124,83 @@ const Contact = () => {
             </div>
             
             <Card className="p-8 shadow-card border-primary/10">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input 
-                    placeholder="Your Distinguished Name" 
-                    className="transition-smooth focus:shadow-elegant font-serif"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            placeholder="Your Distinguished Name" 
+                            className="transition-smooth focus:shadow-elegant font-serif"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="font-serif text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <Input 
-                    type="email" 
-                    placeholder="Your Electronic Address"
-                    className="transition-smooth focus:shadow-elegant font-serif"
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            type="email" 
+                            placeholder="Your Electronic Address"
+                            className="transition-smooth focus:shadow-elegant font-serif"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="font-serif text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <Input 
-                    placeholder="Subject of Inquiry"
-                    className="transition-smooth focus:shadow-elegant font-serif"
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            placeholder="Subject of Inquiry"
+                            className="transition-smooth focus:shadow-elegant font-serif"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="font-serif text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <div>
-                  <Textarea 
-                    placeholder="Compose your message here..." 
-                    rows={5}
-                    className="transition-smooth focus:shadow-elegant resize-none font-serif"
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Compose your message here..." 
+                            rows={5}
+                            className="transition-smooth focus:shadow-elegant resize-none font-serif"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="font-serif text-sm" />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                <Button 
-                  type="submit" 
-                  className="w-full shadow-elegant hover:scale-105 transition-smooth font-serif"
-                >
-                  Dispatch Letter
-                </Button>
-              </form>
+                  <Button 
+                    type="submit" 
+                    className="w-full shadow-elegant hover:scale-105 transition-smooth font-serif"
+                    disabled={form.formState.isSubmitting}
+                  >
+                    {form.formState.isSubmitting ? "Preparing..." : "Dispatch Letter"}
+                  </Button>
+                </form>
+              </Form>
             </Card>
           </div>
         </div>
