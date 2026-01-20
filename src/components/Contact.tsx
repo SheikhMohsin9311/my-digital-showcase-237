@@ -2,11 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Form,
   FormControl,
@@ -26,6 +28,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -37,23 +40,32 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    // Create mailto link with form data
-    const mailtoLink = `mailto:sheikh.mohsin@flame.edu.in?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
-      `From: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
-    )}`;
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
     
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success toast
-    toast({
-      title: "Letter Prepared",
-      description: "Your email client has been opened with your message. Please send the email to complete your correspondence.",
-    });
-    
-    // Reset form after submission
-    form.reset();
+    try {
+      const { data: response, error } = await supabase.functions.invoke('send-contact-email', {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Letter Dispatched",
+        description: "Your message has been sent successfully. You will receive a confirmation email shortly.",
+      });
+      
+      form.reset();
+    } catch (error: any) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Dispatch Failed",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -195,9 +207,16 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     className="w-full shadow-elegant hover:scale-105 transition-smooth font-serif"
-                    disabled={form.formState.isSubmitting}
+                    disabled={isSubmitting}
                   >
-                    {form.formState.isSubmitting ? "Preparing..." : "Dispatch Letter"}
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Dispatching...
+                      </>
+                    ) : (
+                      "Dispatch Letter"
+                    )}
                   </Button>
                 </form>
               </Form>
