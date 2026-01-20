@@ -60,7 +60,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to Sheikh Mohsin
     const notificationEmail = await sendEmail(
-      ["sheikh.mohsin@flame.edu.in"],
+      ["sheikhmohsin9311@gmail.com"],
       `New Contact: ${subject}`,
       `
         <h2>New Message from Portfolio</h2>
