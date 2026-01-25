@@ -89,8 +89,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-semibold mb-1 italic">Electronic Post</h3>
-                  <a href="mailto:sheikh.mohsin@flame.edu.in" className="text-muted-foreground hover:text-primary transition-smooth">
-                    sheikh.mohsin@flame.edu.in
+                  <a href="mailto:sheikhmohsin9311@gmail.com" className="text-muted-foreground hover:text-primary transition-smooth">
+                    sheikhmohsin9311@gmail.com
                   </a>
                 </div>
               </Card>
