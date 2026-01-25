@@ -75,21 +75,36 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Notification email sent:", notificationEmail);
 
-    // Send confirmation email to sender
-    const confirmationEmail = await sendEmail(
-      [email],
-      "Thank you for your message",
-      `
-        <h2>Thank you for reaching out, ${name}!</h2>
-        <p>I have received your message regarding "<strong>${subject}</strong>" and will respond at my earliest convenience.</p>
-        <p>Best regards,<br>Sheikh Mohsin<br>FLAME University, Pune</p>
-      `
-    );
+    // Send confirmation email to sender.
+    // Note: In Resend "testing" mode (no verified domain), you can only email yourself.
+    // We treat confirmation as best-effort so the contact form still works.
+    let confirmationSent = false;
+    try {
+      const confirmationEmail = await sendEmail(
+        [email],
+        "Thank you for your message",
+        `
+          <h2>Thank you for reaching out, ${name}!</h2>
+          <p>I have received your message regarding "<strong>${subject}</strong>" and will respond at my earliest convenience.</p>
+          <p>Best regards,<br>Sheikh Mohsin<br>FLAME University, Pune</p>
+        `
+      );
 
-    console.log("Confirmation email sent:", confirmationEmail);
+      confirmationSent = true;
+      console.log("Confirmation email sent:", confirmationEmail);
+    } catch (confirmationError: any) {
+      console.warn(
+        "Confirmation email failed (continuing without it):",
+        confirmationError?.message ?? confirmationError
+      );
+    }
 
     return new Response(
-      JSON.stringify({ success: true, message: "Emails sent successfully" }),
+      JSON.stringify({
+        success: true,
+        message: "Message received",
+        confirmationSent,
+      }),
       {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
