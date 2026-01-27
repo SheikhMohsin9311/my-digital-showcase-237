@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/sheikh-mohsin-213653254/", label: "LinkedIn" },
     { icon: Mail, href: "mailto:sheikhmohsin9311@gmail.com", label: "Email" },
     { icon: Phone, href: "tel:+916005277810", label: "Phone" },
   ];
