@@ -1,5 +1,6 @@
 import { Linkedin, Mail, Phone, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const socialLinks = [
@@ -10,7 +11,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 border-t border-border">
+    <motion.footer 
+      className="py-12 border-t border-border"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -23,28 +30,35 @@ const Footer = () => {
             
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
-                <Button
+                <motion.div
                   key={index}
-                  variant="ghost"
-                  size="icon"
-                  asChild
-                  className="hover:text-primary hover:bg-primary/10 transition-smooth"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <a 
-                    href={social.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    asChild
+                    className="hover:text-primary hover:bg-primary/10 transition-smooth"
                   >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                </Button>
+                    <a 
+                      href={social.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  </Button>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
