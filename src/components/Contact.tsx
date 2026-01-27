@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Linkedin, Loader2 } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Github, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -120,6 +120,23 @@ const Contact = () => {
                     className="text-muted-foreground hover:text-primary transition-smooth"
                   >
                     View Profile
+                  </a>
+                </div>
+              </Card>
+              
+              <Card className="p-6 flex items-start gap-4 hover:shadow-card transition-smooth border-primary/10">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 border border-primary/20">
+                  <Github className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold mb-1 italic">GitHub</h3>
+                  <a 
+                    href="https://github.com/SheikhMohsin9311" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-smooth"
+                  >
+                    SheikhMohsin9311
                   </a>
                 </div>
               </Card>
