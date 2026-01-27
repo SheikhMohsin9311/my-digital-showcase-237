@@ -114,7 +114,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-display font-semibold mb-1 italic">LinkedIn</h3>
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/in/sheikh-mohsin-213653254/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-smooth"
