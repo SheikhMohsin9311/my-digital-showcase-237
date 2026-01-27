@@ -1,9 +1,10 @@
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/sheikh-mohsin-213653254/", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/SheikhMohsin9311", label: "GitHub" },
     { icon: Mail, href: "mailto:sheikhmohsin9311@gmail.com", label: "Email" },
     { icon: Phone, href: "tel:+916005277810", label: "Phone" },
   ];
