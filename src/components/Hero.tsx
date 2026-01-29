@@ -84,7 +84,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="shadow-elegant hover:scale-105 transition-smooth font-serif text-base px-8"
+              className="shadow-elegant hover:scale-105 transition-smooth font-serif text-base px-8 min-w-[160px]"
               onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
@@ -92,7 +92,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="hover:bg-accent transition-smooth font-serif text-base px-8 border-primary/30"
+              className="hover:bg-accent transition-smooth font-serif text-base px-8 border-primary/30 min-w-[160px]"
               asChild
             >
               <a href="/Sheikh_Mohsin_CV.pdf" download="Sheikh_Mohsin_CV.pdf">
@@ -103,7 +103,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="ghost"
-              className="hover:bg-accent transition-smooth font-serif text-base px-8"
+              className="hover:bg-accent transition-smooth font-serif text-base px-8 min-w-[160px]"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Correspondence

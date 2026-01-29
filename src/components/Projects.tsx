@@ -10,14 +10,16 @@ const Projects = () => {
       publication: "Deccan Herald",
       description: "Co-authored faculty-collaborative article examining education policy and technology frameworks and their implementation challenges.",
       tags: ["Education Policy", "Technology", "Research"],
-      icon: Newspaper
+      icon: Newspaper,
+      link: "https://www.deccanherald.com/opinion/lost-in-instruction-2992854"
     },
     {
       title: "Kashmir Poetics",
       publication: "kashmirpoetics.com",
       description: "Contributed reflective and literary writing exploring cultural narratives, regional perspectives, and Kashmir's literary heritage.",
       tags: ["Creative Writing", "Cultural Studies", "Literature"],
-      icon: FileText
+      icon: FileText,
+      link: "https://kashmirpoetics.com"
     }
   ];
 
@@ -113,18 +115,26 @@ const Projects = () => {
               {publications.map((pub, index) => (
                 <motion.div key={index} variants={itemVariants}>
                   <Card 
-                    className="p-8 hover:shadow-elegant transition-smooth hover:-translate-y-1 shadow-card border-primary/10 h-full"
+                    className="p-8 hover:shadow-elegant transition-smooth hover:-translate-y-1 shadow-card border-primary/10 h-full flex flex-col"
                   >
                     <div className="flex items-start gap-4 mb-4">
                       <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 border border-primary/20">
                         <pub.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="text-xl font-display font-semibold italic">{pub.title}</h4>
                         <p className="text-sm text-primary">{pub.publication}</p>
                       </div>
+                      <a 
+                        href={pub.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-smooth"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
                     </div>
-                    <p className="text-muted-foreground mb-4 font-serif">{pub.description}</p>
+                    <p className="text-muted-foreground mb-4 font-serif flex-1">{pub.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {pub.tags.map((tag, tagIndex) => (
                         <Badge 
