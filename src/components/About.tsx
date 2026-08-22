@@ -6,25 +6,26 @@ const About = () => {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "Full Ride Scholar",
-      description: "Selected among a limited cohort for a university-wide merit scholarship at FLAME University"
+      title: "Full Merit Scholar",
+      description: "Full merit scholarship at FLAME University — cumulative GPA 7.65/10"
+    },
+    {
+      icon: Lightbulb,
+      title: "Systems Researcher",
+      description: "SSD cache and prefetching research at IIT Ropar under Prof. Venkata Kalyan Tavva"
     },
     {
       icon: BookOpen,
       title: "Published Writer",
-      description: "Co-authored education policy article in Deccan Herald and contributed to Kashmir Poetics magazine"
-    },
-    {
-      icon: Lightbulb,
-      title: "Dot Slash Club",
-      description: "Member of University Coding team — Programming, competitive problem solving, hackathons"
+      description: "Co-authored education policy article in Deccan Herald and contributed to Kashmir Poetics"
     },
     {
       icon: Users,
       title: "Karta Initiative Leader",
-      description: "Coordinated student transition programs and mentored incoming cohorts at FLAME University"
+      description: "Mentored a cohort of 40+ students and coordinated transition programs at FLAME University"
     }
   ];
+
 
   const education = [
     {
@@ -78,10 +79,12 @@ const About = () => {
             </h2>
             <div className="w-24 h-px bg-primary/40 mx-auto mb-8" />
             <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-              Second-year B.Sc. Computer Science and Business Analytics student with a strong inclination toward 
-              systems research, algorithmic reasoning, and data-driven problem solving. Interested in research-driven 
-              environments where computational methods intersect with real-world social and technical systems.
+              Third-year B.Sc. Computer Science and Business Analytics student who builds, tests, and explains
+              technical work. At IIT Ropar, I implement and evaluate SSD cache strategies; in operations and QA
+              roles, I turn raw data and edge cases into clearer decisions and more reliable releases. I bring
+              systems thinking, applied analysis, and careful technical writing to new problems.
             </p>
+
           </motion.div>
           
           <motion.div 
