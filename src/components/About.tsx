@@ -6,50 +6,49 @@ const About = () => {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "Full Ride Scholar",
-      description: "Selected among a limited cohort for a university-wide merit scholarship at FLAME University"
+      title: "Full Merit Scholar",
+      description: "Full merit scholarship at FLAME University — cumulative GPA 7.65/10"
+    },
+    {
+      icon: Lightbulb,
+      title: "Systems Researcher",
+      description: "SSD cache and prefetching research at IIT Ropar under Prof. Venkata Kalyan Tavva"
     },
     {
       icon: BookOpen,
       title: "Published Writer",
-      description: "Co-authored education policy article in Deccan Herald and contributed to Kashmir Poetics magazine"
-    },
-    {
-      icon: Lightbulb,
-      title: "Dot Slash Club",
-      description: "Member of University Coding team — Programming, competitive problem solving, hackathons"
+      description: "Co-authored education policy article in Deccan Herald and contributed to Kashmir Poetics"
     },
     {
       icon: Users,
       title: "Karta Initiative Leader",
-      description: "Coordinated student transition programs and mentored incoming cohorts at FLAME University"
+      description: "Mentored a cohort of 40+ students and coordinated transition programs at FLAME University"
     }
   ];
+
 
   const education = [
     {
       institution: "FLAME University, Pune",
-      degree: "BSc Computer Science & Business Analytics",
-      period: "Aug 2024 – Present (Expected April 2028)",
+      degree: "B.Sc. Computer Science & Business Analytics (Full Merit Scholarship)",
+      period: "Aug 2024 – Present · Cumulative GPA: 7.65/10",
       details: [
-        "Full Ride Scholarship Recipient — Current GPA: 7.4/10",
-        "Coursework: Data Structures & Algorithms, Systems Programming, Theory of Computation, Data Mining",
-        "Member of Dot Slash Club (Programming, competitive problem solving, hackathons)",
-        "Interdisciplinary projects integrating Computer Science with Philosophy and Public Policy"
+        "Modeled and verified concurrent and distributed systems with SAT solvers, temporal-logic model checking, and Alloy/TLA+ specifications",
+        "Implemented and compared classification and clustering methods, using PCA to test how feature selection affected model behavior",
+        "Term paper on globalization and India's LPG-era economic reforms (Public Policy coursework)",
+        "Joined Dot Slash Club and completed interdisciplinary projects connecting computer science with Philosophy and Public Policy"
       ]
     },
     {
       institution: "Jawahar Navodaya Vidyalaya, Ganderbal",
       degree: "Senior Secondary Education (Merit Scholarship, Residential)",
-      period: "2017 – 2024",
+      period: "2017 – 2024 · Grades 6–12",
       details: [
-        "Admitted through state-level competitive examination for fully funded residential education",
-        "Extracurricular Head and Atal Tinkering Labs Coordinator",
-        "Taught 3D printing and prototyping fundamentals to junior students",
-        "Active member of Badminton and Debate teams"
+        "Led extracurricular activities and coordinated Atal Tinkering Labs; taught junior students to turn ideas into 3D-printed prototypes"
       ]
     }
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,10 +79,12 @@ const About = () => {
             </h2>
             <div className="w-24 h-px bg-primary/40 mx-auto mb-8" />
             <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-              Second-year B.Sc. Computer Science and Business Analytics student with a strong inclination toward 
-              systems research, algorithmic reasoning, and data-driven problem solving. Interested in research-driven 
-              environments where computational methods intersect with real-world social and technical systems.
+              Third-year B.Sc. Computer Science and Business Analytics student who builds, tests, and explains
+              technical work. At IIT Ropar, I implement and evaluate SSD cache strategies; in operations and QA
+              roles, I turn raw data and edge cases into clearer decisions and more reliable releases. I bring
+              systems thinking, applied analysis, and careful technical writing to new problems.
             </p>
+
           </motion.div>
           
           <motion.div 
