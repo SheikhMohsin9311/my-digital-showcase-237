@@ -8,26 +8,28 @@ const Skills = () => {
       skills: ["Python", "C++", "JavaScript", "SQL", "HTML/CSS", "Git/GitHub", "Linux", "LaTeX", "Markdown"]
     },
     {
-      title: "Data & Algorithms",
-      skills: ["Data Structures & Algorithms", "Data Analysis", "Data Mining", "Data Visualization", "Statistical Reasoning"]
-    },
-    {
-      title: "Systems",
-      skills: ["Systems Programming", "Unix Command Line", "AWS", "Testing & QA Workflows"]
+      title: "Data & Systems",
+      skills: [
+        "Data Structures & Algorithms",
+        "Data Analysis",
+        "Data Mining",
+        "Data Visualization",
+        "Statistical Reasoning",
+        "FTL / NAND Flash Internals",
+        "Hardware Performance Profiling (perf_event_open, RDTSCP)",
+        "Basic AWS"
+      ]
     },
     {
       title: "Soft Skills",
       skills: ["Technical Writing", "Research Communication", "Independent Learning", "Analytical Thinking", "Collaboration"]
     },
     {
-      title: "Research Interests",
-      skills: ["Operating Systems", "Distributed Systems", "Complexity Theory", "Graph Algorithms", "Computational Social Science", "Digital Governance"]
-    },
-    {
       title: "Languages",
       skills: ["English", "Hindi", "Urdu", "Kashmiri"]
     }
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
