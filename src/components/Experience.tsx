@@ -5,16 +5,27 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experiences = [
     {
+      title: "Research Intern (Summer Internship Program) — SSD Systems",
+      company: "IIT Ropar",
+      location: "Rupnagar, Punjab",
+      period: "May 2026 – Present",
+      description: "Storage systems research under Prof. Venkata Kalyan Tavva",
+      responsibilities: [
+        "Learned SSD storage systems from first principles under Prof. Venkata Kalyan Tavva and compared recency- and frequency-based cache eviction strategies in the SimpleSSD-Standalone 2.0 simulator as a foundation for an original performance study",
+        "Designed and implemented a spatial prefetching approach that predicts nearby address-translation entries from how data is grouped in flash; found and fixed a cache-order bug that caused newly loaded entries to evict one another before use",
+        "Investigated how ransomware write bursts interact with an SSD's internal cleanup process, identified a race that may destroy recoverable data before detection responds, and assessed whether a targeted defense could form a new research contribution"
+      ]
+    },
+    {
       title: "Research — Taraksi (Silver Filigree)",
       company: "Discover India Program (DIP)",
       location: "FLAME University",
-      period: "Sept 2025 – Present",
-      description: "Faculty-facilitated research project examining the transition of Taraksi from traditional craft to commercial practice",
+      period: "Sept 2025 – April 2026",
+      description: "Faculty-facilitated research examining the transition of Taraksi from household craft to commercial practice",
       responsibilities: [
-        "Collaborating in a 13-member research project on silver filigree craft traditions",
-        "Conducting literature review and secondary research on historical evolution, techniques, and socio-cultural significance",
-        "Designing field survey frameworks and preparing semi-structured interview questionnaires",
-        "Contributing qualitative insights and analytical notes for academic documentation"
+        "Studied, within a 13-member research team, how Taraksi silver filigree moved from a household craft to a commercial practice",
+        "Traced the craft's history and technique through literature, then designed field surveys and semi-structured interviews to capture how artisans describe the shift from craft to commerce",
+        "Synthesized qualitative findings into academic documentation and cultural analysis"
       ]
     },
     {
@@ -24,10 +35,9 @@ const Experience = () => {
       period: "Jul 2025 – Aug 2025",
       description: "Platform connecting users with party venues and event services",
       responsibilities: [
-        "Performed systematic testing of frontend and backend features to ensure stability across product releases",
-        "Authored detailed bug reports including reproduction steps, edge cases, and expected behavior",
-        "Validated API responses, feature integrations, and cross-device compatibility",
-        "Gained exposure to real-world QA workflows, release validation, and issue tracking systems"
+        "Tested frontend and backend features before release, focusing on edge cases that could break real user flows rather than checking only the happy path",
+        "Wrote reproducible bug reports with exact steps and expected-versus-actual behavior, giving developers a clear path from discovery to triage",
+        "Checked API responses and cross-device behavior to expose integration issues before release"
       ]
     },
     {
@@ -37,13 +47,12 @@ const Experience = () => {
       period: "May 2025 – Jul 2025",
       description: "Non-profit addressing issues of surplus and shortage in urban and rural India",
       responsibilities: [
-        "Analyzed large-scale book donation and redistribution data to identify utilization patterns and operational inefficiencies",
-        "Designed structured datasets and visual summaries to quantify program reach, material flow, and impact",
-        "Proposed data-backed process improvements for sorting, allocation, and redistribution workflows",
-        "Coordinated with field teams and interns to align on-ground observations with operational data"
+        "Traced donation and redistribution data through the sorting pipeline, isolated stages that created backlog, and built structured datasets and visual summaries to support allocation decisions",
+        "Tested data patterns against field-team observations before proposing process changes, separating patterns that reflected real field conditions from patterns caused by incomplete records"
       ]
     }
   ];
+
 
   return (
     <section id="experience" className="py-24 bg-secondary/30">

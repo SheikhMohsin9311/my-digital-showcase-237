@@ -29,27 +29,25 @@ const About = () => {
   const education = [
     {
       institution: "FLAME University, Pune",
-      degree: "BSc Computer Science & Business Analytics",
-      period: "Aug 2024 – Present (Expected April 2028)",
+      degree: "B.Sc. Computer Science & Business Analytics (Full Merit Scholarship)",
+      period: "Aug 2024 – Present · Cumulative GPA: 7.65/10",
       details: [
-        "Full Ride Scholarship Recipient — Current GPA: 7.4/10",
-        "Coursework: Data Structures & Algorithms, Systems Programming, Theory of Computation, Data Mining",
-        "Member of Dot Slash Club (Programming, competitive problem solving, hackathons)",
-        "Interdisciplinary projects integrating Computer Science with Philosophy and Public Policy"
+        "Modeled and verified concurrent and distributed systems with SAT solvers, temporal-logic model checking, and Alloy/TLA+ specifications",
+        "Implemented and compared classification and clustering methods, using PCA to test how feature selection affected model behavior",
+        "Term paper on globalization and India's LPG-era economic reforms (Public Policy coursework)",
+        "Joined Dot Slash Club and completed interdisciplinary projects connecting computer science with Philosophy and Public Policy"
       ]
     },
     {
       institution: "Jawahar Navodaya Vidyalaya, Ganderbal",
       degree: "Senior Secondary Education (Merit Scholarship, Residential)",
-      period: "2017 – 2024",
+      period: "2017 – 2024 · Grades 6–12",
       details: [
-        "Admitted through state-level competitive examination for fully funded residential education",
-        "Extracurricular Head and Atal Tinkering Labs Coordinator",
-        "Taught 3D printing and prototyping fundamentals to junior students",
-        "Active member of Badminton and Debate teams"
+        "Led extracurricular activities and coordinated Atal Tinkering Labs; taught junior students to turn ideas into 3D-printed prototypes"
       ]
     }
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
