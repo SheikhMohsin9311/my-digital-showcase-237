@@ -20,8 +20,11 @@ const Navigation = () => {
     { label: "Expertise", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Works", href: "#projects" },
+    { label: "Service", href: "#service" },
+    { label: "Writings", href: "#writings" },
     { label: "Correspond", href: "#contact" },
   ];
+
 
   const scrollToSection = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
