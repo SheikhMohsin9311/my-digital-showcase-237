@@ -72,7 +72,7 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm uppercase tracking-[0.25em] text-primary text-center mb-4">Chapter V</p>
+          <p className="text-sm uppercase tracking-[0.25em] text-primary text-center mb-4">Chapter VII</p>
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-center mb-6 italic">
             Correspondence
           </h2>

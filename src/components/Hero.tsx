@@ -73,7 +73,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            Computer Science & Business Analytics Student at FLAME University, Pune
+            Computer Science &amp; Business Analytics at FLAME University · SSD Systems Research Intern at IIT Ropar
           </motion.p>
 
           <motion.div
