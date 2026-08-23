@@ -51,7 +51,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="italic">Sheikh</span> Mohsin
+            Sheikh Mohsin
           </motion.h1>
           <motion.div
             className="w-24 h-px bg-primary/50 mx-auto"
