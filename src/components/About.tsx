@@ -6,8 +6,8 @@ const About = () => {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "Full Merit Scholar",
-      description: "Full merit scholarship at FLAME University — cumulative GPA 7.65/10"
+      title: "Full Ride Scholar",
+      description: "Need- and merit-based full ride scholarship at FLAME University — cumulative GPA 7.65/10"
     },
     {
       icon: Lightbulb,
@@ -30,7 +30,7 @@ const About = () => {
   const education = [
     {
       institution: "FLAME University, Pune",
-      degree: "B.Sc. Computer Science & Business Analytics (Full Merit Scholarship)",
+      degree: "B.Sc. Computer Science & Business Analytics (Full Ride Scholarship)",
       period: "Aug 2024 – Present · Cumulative GPA: 7.65/10",
       details: [
         "Modeled and verified concurrent and distributed systems with SAT solvers, temporal-logic model checking, and Alloy/TLA+ specifications",
